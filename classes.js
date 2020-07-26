@@ -151,7 +151,6 @@ class ProgressiveManager extends Manager {
 */
 
 
-////////////// reboot function not working //////////////
 
 //Code Here
 class Machine {
@@ -168,10 +167,10 @@ class Machine {
     this.needs_reboot = true;
   }
   reboot() {
-      return function() {
-      wear_and_tear_count -= 10;
-      needs_reboot = false;
+      return ()=> {
+        this.needs_reboot = false;
+        this.wear_and_tear_count -= 10;
       }
   }
 }
-////////////// reboot function not working //////////////
+
